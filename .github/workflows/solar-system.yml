@@ -59,11 +59,16 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Unit Testing
+        id: nodejs-unit-testing-step
+        run: npm test
+
       - name: Check Code Coverage
         continue-on-error: true
         run: npm run coverage
 
       - name: Archive Test Result
+        if: steps.nodejs-unit-testing-step.outcome == 'failure' || steps.nodejs-unit-testing-step.outcome == 'success'
         uses: actions/upload-artifact@v3
         with:
           name: Code-Coverage-Result
