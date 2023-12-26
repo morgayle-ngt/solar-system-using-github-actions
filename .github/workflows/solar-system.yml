@@ -182,7 +182,7 @@ jobs:
           with:
               method: kubeconfig
               kubeconfig: ${{ secrets.KUBECONFIG }}
-              context: <context name> # current-context from kubeconfig is used as default
+              #context: <context name> # current-context from kubeconfig is used as default
 
         - name: Fetch Kubernetes Cluster Details
           run: |
