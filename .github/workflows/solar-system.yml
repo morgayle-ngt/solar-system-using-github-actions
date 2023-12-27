@@ -1,4 +1,4 @@
-name: ":ringed_planet: Solar System Workflow"
+name: "🪐 Solar System Workflow"
 
 on:
   workflow_dispatch:
@@ -99,7 +99,7 @@ jobs:
           retention-days: 5
 
     docker:
-      name: ":whale: Containerization"
+      name: "🐳 Containerization"
       needs: [unit-testing, code-coverage]
       permissions: 
         packages: write
@@ -114,7 +114,7 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} #updated
 
-      - name: ":octocat: GHCR Login"
+      - name: "🐙 GHCR Login"
         uses: docker/login-action@v3 #updated
         with:
           registry: ghcr.io
@@ -124,7 +124,7 @@ jobs:
       - name: Pull Docker Image #added
         run: docker pull ${{ vars.DOCKERHUB_USERNAME }}/solar-system:latest #added
 
-      - name: ":building_construction: Docker Build For Testing"
+      - name: "🏗️ Docker Build For Testing"
         uses: docker/build-push-action@v5 #updated
         with:
           context: .
@@ -156,7 +156,7 @@ jobs:
       #     push: true
       #     tags: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
 
-      - name: ":ship: Container Registry Push"
+      - name: "🚢 Container Registry Push"
         uses: docker/build-push-action@v5 #updated
         with:
           context: .
@@ -211,7 +211,7 @@ jobs:
             IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
             INGRESS_IP: ${{ env.INGRESS_IP }}
         
-        - name: ":mag: Check files"
+        - name: "🔍 Check files"
           run: |
             cat kubernetes/development/*.yaml
 
@@ -225,7 +225,7 @@ jobs:
               --dry-run=client \
               -o yaml | kubectl apply -f -
 
-        - name: ":dog: Deploy to Dev Env"
+        - name: "🐶 Deploy to Dev Env"
           run: |
             kubectl apply -f kubernetes/development
 
