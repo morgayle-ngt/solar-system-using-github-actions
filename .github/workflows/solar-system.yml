@@ -222,6 +222,6 @@ jobs:
 
         - name: Deploy to Dev Env
           run: |
-            kubectl apply -f kubernetes/deployment
+            kubectl apply -f kubernetes/development
 
 # Comment to trigger workflow after creating namespace "development" onto LKE Cluster
