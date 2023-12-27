@@ -193,6 +193,7 @@ jobs:
         run: echo "Docker Whale is in need of water! 🌊"
 
     dev-deploy:
+      if: contains(github.ref, 'feature/')
       needs: docker
       environment:
         name: development
@@ -270,6 +271,7 @@ jobs:
           run: echo "Kube just pooped on the floor 💩"
 
     dev-integration-test:
+      if: contains(github.ref, 'feature/')
       name: Dev Integration Testing
       needs: dev-deploy
       runs-on: ubuntu-latest
@@ -291,7 +293,8 @@ jobs:
           run: echo "Integration testing just left a turd 💩"
 
     prod-deploy:
-      needs: dev-integration-test
+      if: github.ref == 'refs/heads/main'
+      needs: docker
       environment:
         name: production
         url: https://${{ steps.set-ingress-host-address.outputs.APP_INGRESS_HOST }}
@@ -368,6 +371,7 @@ jobs:
           run: echo "Kube just pooped on the floor 💩"
 
     prod-integration-test:
+      if: github.ref == 'refs/heads/main'
       name: Prod Integration Testing
       needs: prod-deploy
       runs-on: ubuntu-latest
