@@ -59,6 +59,14 @@ jobs:
           name: Mocha-Test-Results
           path: test-results.xml
 
+      - name: Success Message
+        if: success()
+        run: echo "Dale! ✅"
+
+      - name: Failure Message
+        if: failure()
+        run: echo "Unit testing took a dump 💩"
+
     code-coverage:
       name: Code Coverage
       # container:
@@ -97,6 +105,14 @@ jobs:
           name: Code-Coverage-Result
           path: coverage
           retention-days: 5
+
+      - name: Success Message
+        if: success()
+        run: echo "Dale! ✅"
+
+      - name: Failure Message
+        if: failure()
+        run: echo "Code Coverage took a dump 💩"
 
     docker:
       name: "🐳 Containerization"
@@ -164,6 +180,14 @@ jobs:
           tags: |
               ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
               ghcr.io/${{ github.repository_owner }}/solar-system:${{ github.sha }}
+
+      - name: Success Message
+        if: success()
+        run: echo "Dale! ✅"
+      
+      - name: Failure Message
+        if: failure()
+        run: echo "Docker Whale is in need of water! 🌊"
 
     dev-deploy:
       needs: docker
@@ -234,6 +258,14 @@ jobs:
           run: |
             echo "APP_INGRESS_HOST=$(kubectl -n ${{ vars.NAMESPACE }} get ingress -o jsonpath="{.items[0].spec.tls[0].hosts[0]}")" >> "$GITHUB_OUTPUT"
 
+        - name: Success Message
+          if: success()
+          run: echo "Dale! ✅"
+    
+        - name: Failure Message
+          if: failure()
+          run: echo "Kube just pooped on the floor 💩"
+
     integration-test:
       name: Dev Integration Testing
       needs: dev-deploy
@@ -246,5 +278,13 @@ jobs:
             echo $URL
             echo "----------------------"
             curl https://$URL/live -s -k | jq -r .status | grep -i live
+
+        - name: Success Message
+          if: success()
+          run: echo "Dale! ✅"
+      
+        - name: Failure Message
+          if: failure()
+          run: echo "Integration testing just left a turd 💩"
 
 # Comment to trigger workflow after creating namespace "development" onto LKE Cluster
