@@ -126,7 +126,7 @@ jobs:
         - name: Download Mocha Test Artifact
           uses: actions/download-artifact@v3
           with:
-            name: Mocha-Test-Result
+            name: Mocha-Test-Results
 
         - name: Download Code Coverage Artifact
           uses: actions/download-artifact@v3
