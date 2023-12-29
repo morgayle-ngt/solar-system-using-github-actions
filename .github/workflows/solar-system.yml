@@ -152,6 +152,7 @@ jobs:
             AWS_REGION: 'us-east-1'
             SOURCE_DIR: 'reports-${{ github.sha }}'
             DEST_DIR: 'reports-${{ github.sha }}'
+# Trigger workflow step again
 
     docker:
       name: "🐳 Containerization"
