@@ -141,6 +141,14 @@ jobs:
             mv test-results.xml reports-${{ github.sha }}/
             ls -ltr reports-${{ github.sha }}/
 
+        - name: Check AWS Credentials Existence
+          run: |
+            if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ]; then
+              echo "AWS_ACCESS_KEY_ID is not set"
+            else
+              echo "AWS_ACCESS_KEY_ID is set"
+            fi
+          
         - name: Upload to AWS S3
           uses: jakejarvis/s3-sync-action@master
           with:
