@@ -34,11 +34,11 @@ jobs:
 
         - name: Success Message
           if: success()
-          run: "Dale! ✅"
+          run: echo "Dale! ✅"
   
         - name: Failure Message
           if: failure()
-          run: "Kube just pooped on the floor 💩"    
+          run: echo "Kube just pooped on the floor 💩"    
 
         - name: Fetch Kubernetes Cluster Details
           run: |
