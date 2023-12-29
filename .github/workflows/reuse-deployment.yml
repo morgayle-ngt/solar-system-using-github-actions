@@ -27,6 +27,14 @@ jobs:
               kubeconfig: ${{ secrets.KUBECONFIG }}
               #context: <context name> # current-context from kubeconfig is used as default
 
+        - name: Success Message
+          if: success()
+          run: "Dale! ✅"
+  
+        - name: Failure Message
+          if: failure()
+          run: "Kube just pooped on the floor 💩"    
+
         - name: Fetch Kubernetes Cluster Details
           run: |
             kubectl version --short -o yaml
