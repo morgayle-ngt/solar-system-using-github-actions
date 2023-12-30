@@ -305,3 +305,21 @@ jobs:
           if: failure()
           run: echo "Integration testing just left a turd 💩"
 # Comment to trigger workflow after creating namespace "development" onto LKE Cluster
+
+    slack-notification:
+      if: always()
+      name: Slack Notification
+      needs: [dev-integration-test, prod-integration-test]
+      continue-on-error: true
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: github-actions-demo
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://gitlab.com/sidd-harth/solar-system/-/raw/main/images/saturn.png
+          SLACK_MESSAGE: ':hammer_and_wrench Triggered by ${{github.actor}}'
+          SLACK_TITLE: Information
