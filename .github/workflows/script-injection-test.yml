@@ -21,3 +21,4 @@ jobs:
           else
               echo "Not a bug"
           fi
+ # Trigger with [skip ci]
