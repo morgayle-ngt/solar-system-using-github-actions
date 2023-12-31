@@ -12,6 +12,12 @@
 
 A simple HTML+MongoDB+NodeJS project to display Solar System and it's planets.
 
+# My Project
+
+Here's an image related to my project:
+
+![Github Actions CICD Completed Flow](solar-system-cicd-workflow.png)
+![GIPHY API BOT](GIPHY-API-BOT-COMMENT.png)
 ---
 ## Requirements
 
