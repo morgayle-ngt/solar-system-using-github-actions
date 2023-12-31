@@ -16,7 +16,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
     - name: Post Javascript Action PR Comment
-      uses: morgayle-ngt/js-action-pr-giphy-comment@5c0d539a9a4ee62985a7632842212afe220fcf9c
+      uses: morgayle-ngt/js-action-pr-giphy-comment@ec481bdbb6bab7e706444349d1aeeefcce60f166
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
