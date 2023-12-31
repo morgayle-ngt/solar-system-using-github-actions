@@ -15,4 +15,9 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
-#Trigger workflow
+    - name: Post Javascript Action PR Comment
+      uses: morgayle-ngt/js-action-pr-giphy-comment@1.0.0-alpha
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
+# Version tag not working using master branch
