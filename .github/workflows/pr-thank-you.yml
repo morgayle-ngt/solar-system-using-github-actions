@@ -23,4 +23,4 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
-# recompiled into master branch of js repo the updated body property for the createComment method
+# Dynamically obtain details from GitHub context with new index.js recompiled file
