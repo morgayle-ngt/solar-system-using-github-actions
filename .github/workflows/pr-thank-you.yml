@@ -23,4 +23,4 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
-# trigger javascript action with correction to index.js
+# Merged js repo to master branch with latest changes
