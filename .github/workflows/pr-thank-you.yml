@@ -23,4 +23,4 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
-# Updated the body property in the createComment method to use issue_number
+# recompiled into master branch of js repo the updated body property for the createComment method
