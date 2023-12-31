@@ -2,6 +2,14 @@
 
 [![🪐 Solar System Workflow](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/solar-system.yml/badge.svg)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/solar-system.yml)
 
+[![.github/workflows/pr-thank-you.yml](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/pr-thank-you.yml/badge.svg)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/pr-thank-you.yml)
+
+[![Label Issues (Script Injection)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/script-injection-test.yml/badge.svg)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/script-injection-test.yml)
+
+[![Vault Demo](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/vault-demo.yml/badge.svg)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/vault-demo.yml)
+
+[![Deployment - Reusable Workflow](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/reuse-deployment.yml/badge.svg)](https://github.com/morgayle-ngt/solar-system-using-github-actions/actions/workflows/reuse-deployment.yml)
+
 A simple HTML+MongoDB+NodeJS project to display Solar System and it's planets.
 
 ---
