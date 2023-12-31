@@ -19,7 +19,7 @@ Here's an image related to my project:
 ![Github Actions CICD Completed Flow](solar-system-cicd-workflow.png)
 ![GIPHY API BOT](GIPHY-API-BOT-COMMENT.png)
 ![SLACK_MESSAGE](SLACK-NOTIFICATION.png)
-
+![Web Page](Solar-System-FrontEnd.png)
 ---
 ## Requirements
 
